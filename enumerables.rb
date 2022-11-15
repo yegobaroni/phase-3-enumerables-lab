@@ -17,13 +17,12 @@ def get_names(spicy_foods)
     food[:name]
   end
 end
-binding.pry
 # given an array of spicy foods, **return an array of hashes** 
 # where the heat level of the food is greater than 5
 def spiciest_foods(spicy_foods)
   # your code here
   spicy_foods.filter do |food|
-    food[:heat_level > 5]
+    food[:heat_level] > 5
   end
 end
 
@@ -35,7 +34,7 @@ end
 def print_spicy_foods(spicy_foods)
   # your code here
   spicy_foods.each do |food|
-    puts "#{food[:name]} (#{food[:cuisine]}) | Heat Level #{"🌶" * food[:heat_level]}"
+    puts "#{food[:name]} (#{food[:cuisine]}) | Heat Level: #{"🌶" * food[:heat_level]}"
   end
 end
 
@@ -65,7 +64,7 @@ def print_spiciest_foods(spicy_foods)
   # your code here
   hot_food = spiciest_foods(spicy_foods)
   print_spicy_foods(hot_food)
-end
+
 end
 
 # given an array of spicy foods, return an integer representing 
